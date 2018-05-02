@@ -1,9 +1,11 @@
 #! /usr/bin/env php
 <?php
 
+use Alexsabdev\Convrtr\JSON2CSVCommand;
 use Symfony\Component\Console\Application;
 
 require 'vendor/autoload.php';
 
 $app = new Application('Convrtr', '0.1.0');
+$app->add(new JSON2CSVCommand);
 $app->run();
