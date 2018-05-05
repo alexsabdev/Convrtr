@@ -2,6 +2,9 @@
 
 namespace Alexsabdev\Convrtr\Commands;
 
+use Alexsabdev\Convrtr\Readers\JSONReader;
+use Alexsabdev\Convrtr\Writers\CSVWriter;
+use Exception;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -34,7 +37,20 @@ class JSON2CSVCommand extends Command
     {
         $output->writeln('<info>Converting...</info>');
 
-        // magic goes here
+        $reader = new JSONReader();
+        $writer = new CSVWriter();
+        $src = $input->getArgument('src');
+        $dst = $input->getArgument('dst');
+
+        try {
+            $str = $reader->read($src);
+            $arr = $reader->parse($str);
+            $normArr = $reader->normalize($arr);
+            $writer->write($dst, $normArr);
+        } catch (Exception $e) {
+            $output->writeln('<error>' . $e->getMessage() . '</error>');
+            exit;
+        }
 
         $output->writeln('<info>Converted successfully!</info>');
     }
