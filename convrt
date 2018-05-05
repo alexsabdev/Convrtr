@@ -1,7 +1,7 @@
 #! /usr/bin/env php
 <?php
 
-use Alexsabdev\Convrtr\JSON2CSVCommand;
+use Alexsabdev\Convrtr\Commands\JSON2CSVCommand;
 use Symfony\Component\Console\Application;
 
 require 'vendor/autoload.php';
