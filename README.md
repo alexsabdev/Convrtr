@@ -3,6 +3,7 @@ CLI application for converting different file formats (CSV, JSON, XML, etc.).
 
 ## Features
 * Convert from JSON to CSV
+* Convert from CSV to JSON
 * More file types coming...
 
 ## Requirements
