@@ -1,4 +1,4 @@
-# convrtr
+# convrtr [![Build Status](https://travis-ci.org/alexsabdev/convrtr.svg?branch=master)](https://travis-ci.org/alexsabdev/convrtr)
 CLI application for converting different file formats (CSV, JSON, XML, etc.).
 
 ## Features
@@ -7,7 +7,7 @@ CLI application for converting different file formats (CSV, JSON, XML, etc.).
 * More file types coming...
 
 ## Requirements
-* PHP 5.4+
+* PHP 7.1+
 * Composer
 
 ## Usage
