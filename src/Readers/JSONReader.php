@@ -7,30 +7,31 @@ use Exception;
 class JSONReader extends Reader
 {
     /**
-     * @param $str
+     * @param string $str
      * @return array
      * @throws Exception
      */
-    public function parse($str)
+    public function parse(string $str) : array
     {
-        $arr = json_decode($str, true);
+        $result = json_decode($str, true);
 
-        if (!is_array($arr)) {
+        if (!is_array($result)) {
             throw new Exception('Error while parsing a JSON');
         }
 
-        if (array_keys($arr) !== range(0, count($arr) - 1)) {
-            $arr = [ $arr ];
+        if (array_keys($result) !== range(0, count($result) - 1)) {
+            $result = [ $result ];
         }
 
-        return $arr;
+        return $result;
     }
 
     /**
      * @param array $arr
      * @return array
      */
-    public function normalize(array $arr) {
+    public function normalize(array $arr) : array
+    {
         $result = [];
         $flatArr = [];
 
@@ -47,7 +48,6 @@ class JSONReader extends Reader
         }
 
         return $result;
-
     }
 
     /**
@@ -55,7 +55,8 @@ class JSONReader extends Reader
      * @param string $prefix
      * @return array
      */
-    private function flatten(array $arr, $prefix = '') {
+    private function flatten(array $arr, string $prefix = '') : array
+    {
         $result = [];
 
         foreach ($arr as $key => $val) {
@@ -78,7 +79,8 @@ class JSONReader extends Reader
      * @param array $arr
      * @return array
      */
-    private function keys(array $arr) {
+    private function keys(array $arr) : array
+    {
         $result = [];
 
         foreach ($arr as $item) {

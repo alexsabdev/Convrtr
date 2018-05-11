@@ -11,11 +11,11 @@ use Exception;
 abstract class Reader implements ReaderInterface
 {
     /**
-     * @param $path
+     * @param string $path
      * @return string
      * @throws Exception
      */
-    public function read($path)
+    public function read(string $path) : string
     {
         if (!file_exists($path)) {
             throw new Exception('File ' . $path . ' doesn\'t exist');
@@ -27,20 +27,19 @@ abstract class Reader implements ReaderInterface
             throw new Exception('File ' . $path . ' isn\'t readable');
         }
 
-        $contents = fread($handle, filesize($path));
+        $result = fread($handle, filesize($path));
 
-        if (!$contents) {
+        if (!$result) {
             throw new Exception('Error while reading a file ' . $path);
         }
 
         fclose($handle);
 
-        return $contents;
+        return $result;
     }
 
     /**
-     * @param $str
-     * @return array
+     * @param string $str
      */
-    abstract public function parse($str);
+    abstract public function parse(string $str);
 }

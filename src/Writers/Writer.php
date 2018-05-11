@@ -9,9 +9,8 @@ namespace Alexsabdev\Convrtr\Writers;
 abstract class Writer implements WriterInterface
 {
     /**
-     * @param $path
+     * @param string $path
      * @param array $arr
-     * @return void
      */
-    abstract public function write($path, array $arr);
+    abstract public function write(string $path, array $arr);
 }

@@ -11,11 +11,11 @@ use Exception;
 class CSVReader extends Reader
 {
     /**
-     * @param $str
+     * @param string $str
      * @return array
      * @throws Exception
      */
-    public function parse($str)
+    public function parse(string $str) : array
     {
         $result = [];
         $arr = str_getcsv($str, PHP_EOL);
@@ -35,12 +35,12 @@ class CSVReader extends Reader
      * @param array $arr
      * @return array
      */
-    public function normalize(array $arr) {
+    public function normalize(array $arr) : array
+    {
         $result = [];
-
-        $headers = isset($arr[0]) ? $arr[0] : [];
-
+        $headers = $arr[0] ?? [];
         $first = true;
+
         foreach ($arr as $rowKey => $row) {
             if ($first) {
                 $first = false;

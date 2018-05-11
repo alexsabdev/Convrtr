@@ -9,14 +9,12 @@ namespace Alexsabdev\Convrtr\Readers;
 interface ReaderInterface
 {
     /**
-     * @param $path
-     * @return string
+     * @param string $path
      */
-    public function read($path);
+    public function read(string $path);
 
     /**
-     * @param $str
-     * @return array
+     * @param string $str
      */
-    public function parse($str);
+    public function parse(string $str);
 }

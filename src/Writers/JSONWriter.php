@@ -11,12 +11,12 @@ use Exception;
 class JSONWriter extends Writer
 {
     /**
-     * @param $path
+     * @param string $path
      * @param array $arr
      * @throws Exception
      * @return void
      */
-    public function write($path, array $arr)
+    public function write(string $path, array $arr) : void
     {
         $handle = fopen($path, 'wb');
 

@@ -11,12 +11,12 @@ use Exception;
 class CSVWriter extends Writer
 {
     /**
-     * @param $path
+     * @param string $path
      * @param array $arr
-     * @return void
      * @throws Exception
+     * @return void
      */
-    public function write($path, array $arr)
+    public function write(string $path, array $arr) : void
     {
         $handle = fopen($path, 'wb');
 
@@ -38,7 +38,8 @@ class CSVWriter extends Writer
      * @param array $arr
      * @return array
      */
-    private function keys(array $arr) {
+    private function keys(array $arr) : array
+    {
         $result = [];
 
         foreach ($arr as $item) {

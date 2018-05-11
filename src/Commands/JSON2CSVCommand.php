@@ -13,11 +13,9 @@ use Symfony\Component\Console\Output\OutputInterface;
 class JSON2CSVCommand extends Command
 {
     /**
-     * Configure the command.
-     *
      * @return void
      */
-    protected function configure()
+    protected function configure() : void
     {
         $this
             ->setName('json2csv')
@@ -27,13 +25,11 @@ class JSON2CSVCommand extends Command
     }
 
     /**
-     * Execute the command.
-     *
      * @param InputInterface $input
      * @param OutputInterface $output
      * @return void
      */
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output) : void
     {
         $output->writeln('<info>Converting...</info>');
 

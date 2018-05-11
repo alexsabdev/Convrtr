@@ -9,9 +9,8 @@ namespace Alexsabdev\Convrtr\Writers;
 interface WriterInterface
 {
     /**
-     * @param $path
+     * @param string $path
      * @param array $arr
-     * @return void
      */
-    public function write($path, array $arr);
+    public function write(string $path, array $arr);
 }
