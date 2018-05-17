@@ -11,7 +11,6 @@ use PHPUnit\Framework\TestCase;
  */
 class CSVReaderTest extends TestCase
 {
-
     const TEST_FILE_PATH = 'test.csv';
     private $testCSVArr = [
         'one,three.five,three.four,three.six,two',

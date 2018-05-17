@@ -48,8 +48,6 @@ class CSVWriterTest extends TestCase
             ['', 5, 4, '6,66', 22],
             $csv[2]
         );
-
-
     }
 
     public function tearDown()
